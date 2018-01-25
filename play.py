@@ -1,6 +1,6 @@
-from levelOne import levelOne
+from levels.levelOne import levelOne
 import sys
-import  winsound
+import winsound
 
 currentRoom = levelOne.get_first_room()
 chosenRoom = None
