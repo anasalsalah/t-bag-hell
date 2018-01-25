@@ -1,7 +1,7 @@
 from src.room import Room
 from src.level import Level
 
-'''constructing the first room'''
+'''constructing first room'''
 
 bedRoom = Room("Your bedroom is a mess. Your mom is probably turning in her grave.")
 kitchen = Room("Your kitchen is composed of pizza scraps and dirty cutlery."

@@ -1,5 +1,5 @@
-'''A Level is a set of connected rooms. It can be represented by a map.
-The player can enter a level through its first room.'''
+''' A Level is a set of connected rooms. It can be represented by a map.
+The player can enter a level through its first room. '''
 
 
 class Level:
