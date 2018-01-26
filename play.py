@@ -21,13 +21,13 @@ while True:
     direction = sys.stdin.readline()
 
     if direction.strip() == "west":
-        chosenRoom = currentRoom.get_west()
+        chosenRoom = currentRoom.west
     elif direction.strip() == "east":
-        chosenRoom = currentRoom.get_east()
+        chosenRoom = currentRoom.east
     elif direction.strip() == "north":
-        chosenRoom = currentRoom.get_north()
+        chosenRoom = currentRoom.north
     elif direction.strip() == "south":
-        chosenRoom = currentRoom.get_south()
+        chosenRoom = currentRoom.south
     elif direction.strip() == "quit":
         print("Goodbye!")
         break
