@@ -1,12 +1,12 @@
 from levels.levelOne import levelOne
+from playsound import playsound
 import sys
-import winsound
 
 currentRoom = levelOne.get_first_room()
 chosenRoom = None
 tryAgain = False
 
-# winsound.PlaySound("SillyPigSong.wav",winsound.SND_ASYNC)
+playsound('media/silly-pig-song.mp3', False)
 
 print("You wake up. You feel like shit.")
 
