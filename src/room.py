@@ -1,4 +1,4 @@
-''' Player moves from one room to the next. Each
+'''  Player moves from one room to the next. Each
 room is connected to other rooms in the four different directions.
 Each room hosts a set of different characters and objects
 that the player can interact with.'''
