@@ -29,7 +29,8 @@ class Room:
         else:
             self.__firstTime = True
     '''
-    def __init__(self, desc, characters=None, objects=None, north_room=None, south_room=None, east_room=None, west_room=None):
+    def __init__(self, name, desc, characters=None, objects=None, north_room=None, south_room=None, east_room=None, west_room=None):
+        self.__name = name
         self.__description = desc
         self.__characters = characters
         self.__objects = objects
@@ -37,9 +38,14 @@ class Room:
         self.__south_room = south_room
         self.__east_room = east_room
         self.__west_room = west_room
+        self.__explored = False
 
     def __repr__(self):
         return self.description
+
+    @property
+    def name(self):
+        return self.__name
 
     @property
     def description(self):
@@ -61,12 +67,16 @@ class Room:
     def west(self):
         return self.__west_room
 
-    def set_north(self,room, both_directions=True):
+    @property
+    def explored(self):
+        return self.__explored
+
+    def set_north(self, room, both_directions=True):
         self.__north_room = room
         if both_directions:
             room.set_south(self, False)
 
-    def set_south(self,room, both_directions=True):
+    def set_south(self, room, both_directions=True):
         self.__south_room = room
         if both_directions:
             room.set_north(self, False)
@@ -81,4 +91,5 @@ class Room:
         if both_directions:
             room.set_east(self, False)
 
-
+    def set_explored(self, exp=True):
+        self.__explored = exp
