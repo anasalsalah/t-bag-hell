@@ -43,6 +43,9 @@ class Room:
     def __repr__(self):
         return self.description
 
+    def __str__(self):
+        return self.description
+
     @property
     def name(self):
         return self.__name
