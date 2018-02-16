@@ -4,7 +4,7 @@ from src.level import Level
 '''constructing  first room'''
 
 bedRoom = Room('bedroom', ["My bedroom was a MESS.",
-                           "(My mom is probably turning in her grave)"])
+                           "(My mom is probably turning in her grave)"], True)
 
 kitchen = Room('kitchen', ["My kitchen was composed of pizza scraps, dirty cutlery,",
                            "and swarms of bugs circling black garbage bags.",

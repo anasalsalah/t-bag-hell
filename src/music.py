@@ -4,6 +4,8 @@ from src import printer
 
 class Music:
 
+    # seems there's no way to find out if music is paused or not using pygame.mixer
+    # so we are creating a flag of our own
     __music_paused = False
     __song_player = None
 
@@ -19,6 +21,7 @@ class Music:
         self.__music_paused = not self.__music_paused
 
         if self.__music_paused:
+            # TODO May decide to refactor the printing to enhance decoupling
             printer.print_music_off()
             self.__song_player.pause()
         else:

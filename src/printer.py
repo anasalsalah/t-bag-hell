@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 
 
+# methods defined outside of a class are by default static! They are a single instance of a function.
 def print_datetime():
     print("I looked at my wrist watch. The date and time were: {}".format(datetime.now().strftime("%H:%M %B %d,%Y")))
 
@@ -10,15 +11,23 @@ def print_datetime():
 def g_print(text, line_wait=0.05, new_line=False):
     # TODO print the text letter by letter in proportion to the seconds passed
     # interval = seconds / line.__len__()
-    if not isinstance(text, str): # assuming that text is a list of strings
+    if not isinstance(text, str):  # assuming that text is a list of strings
         for line in text:
             print(line)
-            time.sleep(line.__len__()*line_wait)
-    else: # text is a string
+            time.sleep(line.__len__()*line_wait)  # sleep in proportion to the length of the text
+    else:  # text is a string
         print(text)
-        time.sleep(text.__len__()*line_wait)
+        time.sleep(text.__len__()*line_wait)  # sleep in proportion to the length of the text
     if new_line:
         print("\n")
+
+
+def print_where(room):
+    print("At the time, I was in the " + room.name + ".")
+    print_where_dir(room, commands.C_NORTH)
+    print_where_dir(room, commands.C_SOUTH)
+    print_where_dir(room, commands.C_EAST)
+    print_where_dir(room, commands.C_WEST)
 
 
 def print_where_dir(room, direction):
@@ -40,14 +49,6 @@ def print_where_dir(room, direction):
         print("To the " + direction + ", I could see the " + the_room.name + ".")
     else:
         print("To the " + direction + ", there was unknown territory waiting to be explored!")
-
-
-def print_where(room):
-    print("At the time, I was in the " + room.name + ".")
-    print_where_dir(room, commands.C_NORTH)
-    print_where_dir(room, commands.C_SOUTH)
-    print_where_dir(room, commands.C_EAST)
-    print_where_dir(room, commands.C_WEST)
 
 
 def print_room(room):

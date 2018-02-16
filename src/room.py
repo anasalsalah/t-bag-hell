@@ -29,7 +29,7 @@ class Room:
         else:
             self.__firstTime = True
     '''
-    def __init__(self, name, desc, characters=None, objects=None, north_room=None, south_room=None, east_room=None, west_room=None):
+    def __init__(self, name, desc, is_explored=False, characters=None, objects=None, north_room=None, south_room=None, east_room=None, west_room=None):
         self.__name = name
         self.__description = desc
         self.__characters = characters
@@ -38,7 +38,7 @@ class Room:
         self.__south_room = south_room
         self.__east_room = east_room
         self.__west_room = west_room
-        self.__explored = False
+        self.__explored = is_explored
 
     def __repr__(self):
         return self.description

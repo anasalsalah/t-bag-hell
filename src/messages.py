@@ -26,7 +26,7 @@ intro_msg = [
     "That day, I woke up in my room with a hangover.",
     "I felt like shit, but it was nothing out of the ordinary.\n"]
 
-new_turn_msg = ">>> AND THEN? >>>"
+new_turn_msg = ">>> What happened next? >>>"
 
 help_hint_msg = "I thought, I sure could use a bit of HELP"
 
