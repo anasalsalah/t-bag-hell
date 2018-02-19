@@ -3,27 +3,26 @@ import time
 from datetime import datetime
 
 
-# methods defined outside of a class are by default static! They are a single instance of a function.
-def print_datetime():
-    print("I looked at my wrist watch. The date and time were: {}".format(datetime.now().strftime("%H:%M %B %d,%Y")))
-
-
-def g_print(text, line_wait=0.05, new_line=False):
+# core method used by ALL other methods in this module
+def g_print(text, line_wait=0, new_line=False):
     # TODO print the text letter by letter in proportion to the seconds passed
     # interval = seconds / line.__len__()
-    if not isinstance(text, str):  # assuming that text is a list of strings
-        for line in text:
-            print(line)
-            time.sleep(line.__len__()*line_wait)  # sleep in proportion to the length of the text
-    else:  # text is a string
-        print(text)
-        time.sleep(text.__len__()*line_wait)  # sleep in proportion to the length of the text
+    text_list = text.split("\n")
+    for line in text_list:
+        print(line)
+        time.sleep(line.__len__() * line_wait)
     if new_line:
         print("\n")
 
 
+# methods defined outside of a class are by default static! They are a single instance of a function.
+def print_datetime():
+    g_print("I looked at my wrist watch. The date and time were: {}"
+            .format(datetime.now().strftime("%H:%M %B %d,%Y")))
+
+
 def print_where(room):
-    print("At the time, I was in the " + room.name + ".")
+    g_print("At the time, I was in the " + room.name + ".")
     print_where_dir(room, commands.C_NORTH)
     print_where_dir(room, commands.C_SOUTH)
     print_where_dir(room, commands.C_EAST)
@@ -41,28 +40,28 @@ def print_where_dir(room, direction):
     elif direction == commands.C_WEST:
         the_room = room.west
     else:
-        print("invalid direction")
+        g_print("invalid direction")
 
     if the_room is None:
-        print("To the " + direction + ", there was a nice solid wall for me to bang my head against.")
+        g_print("To the " + direction + ", there was a nice solid wall for me to bang my head against.")
     elif the_room.explored:
-        print("To the " + direction + ", I could see the " + the_room.name + ".")
+        g_print("To the " + direction + ", I could see the " + the_room.name + ".")
     else:
-        print("To the " + direction + ", there was unknown territory waiting to be explored!")
+        g_print("To the " + direction + ", there was unknown territory waiting to be explored!")
 
 
-def print_room(room):
+def print_room(room, line_wait):
     if room.explored:
-        g_print("I went back to the " + room.name + ".", 0)
+        g_print("I went back to the " + room.name + ".")
     else:
         room.set_explored()
-        g_print(room.description)
+        g_print(room.description, line_wait)
 
 
 def print_music_off():
-    g_print("I was getting tired of the music, so I took my earphones off.", 0)
+    g_print("I was getting tired of the music, so I took my earphones off.")
 
 
 def print_music_on():
-    g_print("I decided to put on my earphones and listen to my favorite song.", 0)
+    g_print("I decided to put on my earphones and listen to my favorite song.")
 

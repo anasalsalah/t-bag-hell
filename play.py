@@ -1,8 +1,7 @@
 import sys
-from src import commands, game
+from src import game
 
-game = game.Game()
-game.start()
+game = game.Game(True, 0.05)
 
 while True:
     game.new_turn()

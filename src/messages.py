@@ -16,19 +16,18 @@ But I collected myself and focused...'''
 
 wall_msg = "I smashed my face into a wall. I screamed in pain. But I didn't give up."
 
-intro_msg = [
-    "~~~~~~~~~~~~~~~~~~~~THIS IS HELL!~~~~~~~~~~~~~~~~~~~~~",
-    "~~ a Kafka-esque comedy of Dante-esque proportions ~~~",
-    "\nI've been to Hell and back. Literally.",
-    "Hell. With a capital H.",
-    "Did I ever tell you that story?",
-    "\nOf course, at first, I didn't realize I was in THE Hell.",
-    "That day, I woke up in my room with a hangover.",
-    "I felt like shit, but it was nothing out of the ordinary.\n"]
+intro_msg = '''~~~~~~~~~~~~~~~~~~~~THIS IS HELL!~~~~~~~~~~~~~~~~~~~~~
+~~ a Kafka-esque comedy of Dante-esque proportions ~~~
+\nI've been to Hell and back. Literally.
+Hell. With a capital H.
+Did I ever tell you that story?
+\nOf course, at first, I didn't realize I was in THE Hell.
+That day, I woke up in my room with a hangover.
+I felt like shit, but it was nothing out of the ordinary.\n'''
 
 new_turn_msg = ">>> What happened next? >>>"
 
 help_hint_msg = "I thought, I sure could use a bit of HELP"
 
-nothing_use_msg = ["There was nothing here to use, except my wits.", "Which were, apparently, duller than I expected."]
-none_talk_msg = ["There was no one here.", "Within the sound of silence, I could see my thoughts grow uneasy."]
+nothing_use_msg = "There was nothing here to use, except my wits.\nWhich were, apparently, duller than I expected."
+none_talk_msg = "There was no one here.\nWithin the sound of silence, I could see my thoughts grow uneasy."
