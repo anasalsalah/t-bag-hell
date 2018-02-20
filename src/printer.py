@@ -4,16 +4,13 @@ from datetime import datetime
 
 
 # core method used by ALL other methods in this module
-def g_print(text, line_wait=0, new_line=False):
+def g_print(text, line_wait=0):
     # TODO print the text letter by letter in proportion to the seconds passed
     # interval = seconds / line.__len__()
     text_list = text.split("\n")
     for line in text_list:
         print(line)
         time.sleep(line.__len__() * line_wait)
-    if new_line:
-        print("\n")
-
 
 # methods defined outside of a class are by default static! They are a single instance of a function.
 def print_datetime():

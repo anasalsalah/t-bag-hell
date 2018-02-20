@@ -15,6 +15,10 @@ class Game:
     __music_player = None
     __line_wait = 0
 
+    @property
+    def current_room(self):
+        return self.__current_room
+
     def __init__(self, music_on=True, line_wait=0.05):
         self.__music_player = music.Music(music_on)
         self.__line_wait = line_wait
