@@ -12,28 +12,29 @@ Begin Game
     Start game
     ${INTRO_MSG}=   Get Intro Msg
     Result should be    Introduction    ${INTRO_MSG}
+
 Examine Bedroom
     [Tags]    DEBUG
     Start game
-    If in room  bedroom
+    Validate room  bedroom
     ${ROOM_DESC}=   Get Room Desc
-    Examine room
+    Input Command   examine
     Result should be    Bedroom Description    ${ROOM_DESC}
 
 Enter Bad Command
     [Tags]    DEBUG
     Start game
-    If in room  bedroom
+    Validate room  bedroom
     ${WRONG_MSG}=   Get Wrong Msg
-    Is Wrong Command    Bla_This_Is_Wrong
+    Input Command    Bla_This_Is_A_Wrong_Cmd
     Result should be    Wrong Message    ${WRONG_MSG}
 
 Go to Hallway
     [Tags]    DEBUG
     Start game
-    If in room  bedroom
+    Validate room  bedroom
     Move    north
-    If in room  hallway
+    Validate room  hallway
     ${ROOM_DESC}=   Get Room Desc
     Result should be    Hallway Description    ${ROOM_DESC}
 
