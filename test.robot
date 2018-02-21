@@ -1,7 +1,8 @@
 *** Settings ***
 Documentation   Suite description
 ...             Test cases for This is Hell.
-Library     test/GameLibrary.py  "I am a useless parameter!"
+Library     test/GameLibrary.py
+# next to the library name, we can add parameters for the library's __init function
 
 *** Variables ***
 # none for now #

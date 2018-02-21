@@ -14,7 +14,7 @@ wrong_msg = '''Suddenly, my mind felt like an incensed ape banging a keyboard wi
 Random words and jumbled letters rushed into my brain.
 But I collected myself and focused...'''
 
-wall_msg = "I smashed my face into a wall. I screamed in pain. But I didn't give up."
+hit_wall_msg = "I smashed my face into a wall. I screamed in pain. But I didn't give up."
 
 intro_msg = '''~~~~~~~~~~~~~~~~~~~~THIS IS HELL!~~~~~~~~~~~~~~~~~~~~~
 ~~ a Kafka-esque comedy of Dante-esque proportions ~~~
