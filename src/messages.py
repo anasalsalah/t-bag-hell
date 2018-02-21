@@ -31,3 +31,6 @@ help_hint_msg = "I thought, I sure could use a bit of HELP"
 
 nothing_use_msg = "There was nothing here to use, except my wits.\nWhich were, apparently, duller than I expected."
 none_talk_msg = "There was no one here.\nWithin the sound of silence, I could see my thoughts grow uneasy."
+
+music_off_msg = "I was getting tired of the music, so I took my earphones off."
+music_on_msg = "I decided to put on my earphones and listen to my favorite song."

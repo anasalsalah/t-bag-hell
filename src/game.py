@@ -23,42 +23,45 @@ class Game:
     def last_output(self):
         return self.__last_output
 
-    def __init__(self, music_on=True, line_wait=0.05):
+    def __init__(self, music_on=False, line_wait=0):
         self.__music_player = music.Music(music_on)
         self.__line_wait = line_wait
-        self.__last_output = printer.g_print(messages.intro_msg, self.__line_wait)
+        self.__output(messages.intro_msg, self.__line_wait)
+
+    def __output(self, text, line_wait=0):
+        self.__last_output = printer.g_print(text, line_wait)
 
     def wrong_command(self):
-        self.__last_output = printer.g_print(messages.wrong_msg, 0)
+        self.__output(messages.wrong_msg)
         self.__wrong_count += 1
 
     def toggle_music(self):
         if self.__music_player.is_paused():
-            self.__last_output = printer.print_music_on()
+            self.__output(messages.music_on_msg)
         else:
-            self.__last_output = printer.print_music_off()
+            self.__output(messages.music_off_msg)
         self.__music_player.toggle_music()
 
     def new_turn(self):
         self.check_needs_help()
-        self.__last_output = printer.g_print(messages.new_turn_msg, self.__line_wait)
+        self.__output(messages.new_turn_msg, self.__line_wait)
 
     def player_moved(self):
         if self.__chosen_room is None:
-            self.__last_output = printer.g_print(messages.hit_wall_msg)
+            self.__output(messages.hit_wall_msg)
         else:
             self.__current_room = self.__chosen_room
 
             if self.__current_room.explored:
-                self.__last_output = printer.print_explored_room(self.__current_room)
+                self.__output(printer.get_explored_room(self.__current_room))
             else:
                 self.__current_room.set_explored()
-                self.__last_output = printer.print_new_room(self.__current_room, self.__line_wait)
+                self.__output(printer.get_new_room(self.__current_room), self.__line_wait)
 
     def check_needs_help(self):
         if self.__wrong_count >= 3:
             self.__wrong_count = 0  # reset the counter and print the HELP hint
-            self.__last_output = printer.g_print(messages.help_hint_msg)
+            self.__output(messages.help_hint_msg)
 
     def go_west(self):
         self.__chosen_room = self.__current_room.west
@@ -77,25 +80,25 @@ class Game:
         self.player_moved()
 
     def talk(self):
-        self.__last_output = printer.g_print(messages.none_talk_msg, self.__line_wait)
+        self.__output(messages.none_talk_msg, self.__line_wait)
 
     def use(self):
-        self.__last_output = printer.g_print(messages.nothing_use_msg, self.__line_wait)
+        self.__output(messages.nothing_use_msg, self.__line_wait)
 
     def examine(self):
-        self.__last_output = printer.g_print(self.__current_room.description, self.__line_wait)
+        self.__output(self.__current_room.description)
 
     def examine_here(self):
-        self.__last_output = printer.g_print(self.__current_room.description)
+        self.__output(self.__current_room.description)
 
     def examine_where(self):
-        self.__last_output = printer.print_where(self.__current_room)
+        self.__output(printer.get_where(self.__current_room))
 
     def datetime(self):
-        self.__last_output = printer.print_datetime()
+        self.__output(printer.get_datetime())
 
     def help(self):
-        self.__last_output = printer.g_print(messages.help_tips_msg)
+        self.__output(messages.help_tips_msg)
 
     def quit(self):
         self.__last_output = printer.g_print(messages.quit_msg)

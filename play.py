@@ -1,7 +1,7 @@
 import sys
 from src import game
 
-game = game.Game(False, 0.00)
+game = game.Game(True, 0.05)
 
 while True:
     game.new_turn()
