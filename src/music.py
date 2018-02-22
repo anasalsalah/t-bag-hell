@@ -1,9 +1,10 @@
 from pygame import mixer
 
+
 class Music:
 
     __song_player = None
-    __song_list = ["media/welcome-to-hell-test.ogg", "media/silly-pig-song-test.ogg"]
+    __song_list = ["media/welcome-to-hell.ogg", "media/silly-pig-song.ogg"]
     __song_index = -1
 
     def __init__(self, play_now=False):
