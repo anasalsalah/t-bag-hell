@@ -44,13 +44,13 @@ def __where_direction(room, direction):
     if the_room is None:
         return "To the " + direction + ", there was a nice solid wall for me to bang my head against."
     elif the_room.explored:
-        return "To the " + direction + ", I could see the " + the_room.name + "."
+        return "To the " + direction + ", there was the " + the_room.name + "."
     else:
-        return "To the " + direction + ", there was unknown territory waiting to be explored!"
+        return "To the " + direction + ", a I couldn't tell what was out there."
 
 
 def get_explored_room(room):
-    return "I went back to the " + room.name + "."
+    return "I went to the " + room.name + "."
 
 
 def get_new_room(room):

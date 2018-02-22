@@ -4,15 +4,15 @@ from src.level import Level
 '''constructing  first room'''
 
 bedRoom = Room('bedroom', '''My bedroom was a MESS.
-My mom is probably turning in her grave''', True)
+My mom is probably turning in her grave.''', True)
 
 kitchen = Room('kitchen', '''My kitchen was composed of pizza scraps, dirty cutlery,
 and swarms of bugs circling black garbage bags.
-I could see nothing else in this heinous fly trap.''')
+I could see nothing else in this heinous fly trap.''', True)
 
 living = Room('living room', '''The living room still looked like a dump.
 Things seldom change around here.
-Including my hygienic proclivities.''')
+Including my hygienic proclivities.''', True)
 
 hallway = Room('hallway', '''I stepped out of my house, and... what's this???
 Instead of my front yard, I walk into a hallway that seems to extend forever.
@@ -31,9 +31,9 @@ In God-knows-how-long, I exit the elevator,
 and I'm greeted by a friendly Velociraptor in a tuxedo and a bow-tie.
 "Welcome, Sirmadam!"''')
 
-bedRoom.set_east(kitchen)
 bedRoom.set_south(living)
-bedRoom.set_north(hallway)
+living.set_east(kitchen)
+living.set_south(hallway)
 hallway.set_west(elevator)
 elevator.set_south(spa)
 

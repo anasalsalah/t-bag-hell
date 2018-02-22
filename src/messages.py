@@ -18,14 +18,24 @@ hit_wall_msg = "I smashed my face into a wall. I screamed in pain. But I didn't 
 
 intro_msg = '''~~~~~~~~~~~~~~~~~~~~THIS IS HELL!~~~~~~~~~~~~~~~~~~~~~
 ~~ a Kafka-esque comedy of Dante-esque proportions ~~~
-\nI've been to Hell and back. Literally.
-Hell. With a capital H.
-Did I ever tell you that story?
-\nOf course, at first, I didn't realize I was in THE Hell.
-That day, I woke up in my room with a hangover.
-I felt like shit, but it was nothing out of the ordinary.\n'''
 
-new_turn_msg = ">>> What happened next? >>>"
+Thank you, Doctor, for agreeing to speak with me.
+While I realise that your profession ultimately affects your judgement of my character,
+I sincerely hope that you'll lend me an impartial ear until I'm finished with my story.
+
+I've been to Hell and back, Doctor. Literally... Hell. With a capital H.
+
+I can see your lips attempting to conceal a smile. That's alright. I've had far worse reactions.
+Know that my journey has absolved me. Of all doubt. Of all fear.
+I'll tell my story as I experienced it. I will leave no detail obscured by either shame or decency.
+ 
+I was young at the time. Young and foolish.
+That morning, I woke up in my bedroom with a bad hangover.
+I tried recalling the night before - it started with a party -
+But I couldn't remember how it ended, and how I got back home.  
+Anyway, I woke up. Hangover. Felt like shit. Nothing out of the ordinary.'''
+
+new_turn_msg = ">>>>>>>>>>>"
 
 help_hint_msg = "I thought, I sure could use a bit of HELP"
 
@@ -34,3 +44,5 @@ none_talk_msg = "There was no one here.\nWithin the sound of silence, I could se
 
 music_off_msg = "I was getting tired of the music, so I took my earphones off."
 music_on_msg = "I decided to put on my earphones and listen to my favorite songs."
+music_broken_msg = "But I couldn't find the music on my phone... they were deleted somehow!" \
+                   "\n\"Huh. I guess this IS hell,\" I muttered."

@@ -40,7 +40,10 @@ class Game:
             self.__output(messages.music_off_msg)
         else:
             self.__output(messages.music_on_msg)
-        self.__music_player.toggle_music()
+        try:
+            self.__music_player.toggle_music()
+        except music.MusicNotFoundError:
+            printer.g_print(messages.music_broken_msg)
 
     def new_turn(self):
         self.check_needs_help()
