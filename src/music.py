@@ -1,39 +1,30 @@
 from pygame import mixer
 
-
 class Music:
 
-    # seems there's no way to find out if music is paused or not using pygame.mixer
-    # so we are creating a flag of our own
-    __music_paused = True
     __song_player = None
+    __song_list = ["media/welcome-to-hell-test.ogg", "media/silly-pig-song-test.ogg"]
+    __song_index = -1
 
     def __init__(self, play_now=False):
         mixer.init()
         self.__song_player = mixer.music
-        self.__song_player.load("media/welcome-to-hell.ogg")
-        # TODO figure out how to get the mixer queue to keep playing songs
-        # self.__song_player.queue("media/silly-pig-song.ogg")
         if play_now:
-            self.start()
+            self.play_next()
 
-    def start(self):
-        self.__music_paused = False
+    def play_next(self):
+        # go to next song (or loop back to first song)
+        self.__song_index = (self.__song_index + 1) % len(self.__song_list)
+        self.__song_player.load(self.__song_list[self.__song_index])
         self.__song_player.play()
 
-    def is_paused(self):
-        return self.__music_paused
+    def is_playing(self):
+        return self.__song_player.get_busy()
 
     def toggle_music(self):
-        self.__music_paused = not self.__music_paused
-
-        if self.__music_paused:
-            self.__song_player.pause()
+        if self.is_playing():
+            self.__song_player.stop()
         else:
-            if not self.__song_player.get_busy(): # song finished and player stopped
-                self.__song_player.load("media/silly-pig-song.ogg")
-                self.__song_player.play()
-            else:
-                self.__song_player.unpause()
+            self.play_next()
 
 

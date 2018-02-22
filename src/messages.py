@@ -33,4 +33,4 @@ nothing_use_msg = "There was nothing here to use, except my wits.\nWhich were, a
 none_talk_msg = "There was no one here.\nWithin the sound of silence, I could see my thoughts grow uneasy."
 
 music_off_msg = "I was getting tired of the music, so I took my earphones off."
-music_on_msg = "I decided to put on my earphones and listen to my favorite song."
+music_on_msg = "I decided to put on my earphones and listen to my favorite songs."

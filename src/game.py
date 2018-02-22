@@ -36,10 +36,10 @@ class Game:
         self.__wrong_count += 1
 
     def toggle_music(self):
-        if self.__music_player.is_paused():
-            self.__output(messages.music_on_msg)
-        else:
+        if self.__music_player.is_playing():
             self.__output(messages.music_off_msg)
+        else:
+            self.__output(messages.music_on_msg)
         self.__music_player.toggle_music()
 
     def new_turn(self):
